@@ -100,16 +100,74 @@
         /* Hero Section */
         .hero {
             padding: 120px 0 80px;
-            background: linear-gradient(180deg, var(--navy) 0%, var(--dark-gray) 100%);
+            background: #0A1628;
+            background: radial-gradient(ellipse at top, #1a2f4f 0%, #0A1628 50%, #050d19 100%);
             min-height: 90vh;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(90deg, rgba(2, 174, 214, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(2, 174, 214, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
         }
 
         .hero-content {
             text-align: left;
             animation: fadeInUp 1s ease-out;
-            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #02AED6 0%, #2F3A63 50%, #F8673C 100%);
+            box-shadow: 0 20px 60px rgba(2, 174, 214, 0.3);
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: rgba(10, 22, 40, 0.9);
+            border-radius: 18px;
+            z-index: 1;
+        }
+
+        .hero-visual-text {
+            position: relative;
+            z-index: 2;
+            font-size: 4rem;
+            color: rgba(2, 174, 214, 0.3);
+            font-weight: 800;
+            font-family: 'Ubuntu', sans-serif;
         }
 
         @keyframes fadeInUp {
@@ -204,11 +262,24 @@
             background: var(--dark-gray);
         }
 
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+        .media-carousel-wrapper {
+            position: relative;
             margin-top: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .media-carousel {
+            flex: 1;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .media-carousel-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s ease;
         }
 
         .media-card {
@@ -218,12 +289,52 @@
             overflow: hidden;
             transition: all 0.3s;
             cursor: pointer;
+            flex: 0 0 calc(33.333% - 20px);
+            min-width: 320px;
         }
 
         .media-card:hover {
             transform: translateY(-5px);
             border-color: var(--cyan);
             box-shadow: 0 10px 30px rgba(2, 174, 214, 0.2);
+        }
+
+        .carousel-arrow {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--medium-gray);
+            border: 2px solid transparent;
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-arrow:hover {
+            background: var(--cyan);
+            border-color: var(--cyan);
+            transform: scale(1.1);
+        }
+
+        .carousel-arrow:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        .carousel-arrow:disabled:hover {
+            background: var(--medium-gray);
+            border-color: transparent;
+        }
+
+        .media-cta {
+            text-align: center;
+            margin-top: 50px;
         }
 
         .media-image {
@@ -777,10 +888,12 @@
             background: var(--medium-gray);
             border: 2px solid transparent;
             border-radius: 20px;
-            padding: 40px;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            gap: 0;
+            padding: 0;
         }
 
         .why-card:hover {
@@ -789,46 +902,51 @@
             background: rgba(47, 58, 99, 0.3);
         }
 
+        .why-card-image {
+            flex: 0 0 45%;
+            background: linear-gradient(135deg, #02AED6 0%, #2F3A63 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-card-content {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
         .why-number {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: var(--cyan);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Ubuntu', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--white);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            flex-shrink: 0;
         }
 
         .why-card h3 {
             font-family: 'Ubuntu', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
             color: var(--white);
-            letter-spacing: 0.5px;
-            line-height: 1.4;
+            letter-spacing: 0.3px;
+            line-height: 1.3;
         }
 
         .why-card p {
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.7;
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-
-        .why-detail {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(2, 174, 214, 0.2);
-        }
-
-        .why-detail p {
-            color: var(--cyan);
-            font-style: italic;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
 
         .why-cta {
@@ -1066,6 +1184,15 @@
         }
 
         @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-visual {
+                height: 400px;
+            }
+
             .services-wrapper {
                 grid-template-columns: 1fr;
                 gap: 60px;
@@ -1087,6 +1214,11 @@
                 width: 450px;
                 height: 360px;
             }
+
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
         }
 
         @media (max-width: 1024px) {
@@ -1105,6 +1237,14 @@
                 font-size: 1.1rem;
             }
 
+            .hero-visual {
+                height: 300px;
+            }
+
+            .hero-visual-text {
+                font-size: 3rem;
+            }
+
             .hero-cta-wrapper {
                 flex-direction: column;
                 gap: 15px;
@@ -1117,6 +1257,27 @@
 
             .section-title {
                 font-size: 1.8rem;
+            }
+
+            .why-card {
+                flex-direction: column;
+            }
+
+            .why-card-image {
+                flex: 0 0 150px;
+                width: 100%;
+            }
+
+            .why-card-content {
+                padding: 25px;
+            }
+
+            .why-card h3 {
+                font-size: 1rem;
+            }
+
+            .why-card p {
+                font-size: 0.85rem;
             }
 
             .media-grid {
@@ -1313,15 +1474,20 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>PR That Helps You <span>Own Your Category</span> Instead of Just Appearing in It</h1>
-                <p class="hero-subtitle">We Turn Your Project into the Reference Point for Your Entire Niche</p>
-                <p class="hero-description">
-                    You become the project everyone talks about in your category. Narratives crafted by Web3 natives and amplified across the entire ecosystem. Your story reaches every place where your audience listens, learns, and invests.
-                </p>
-                <div class="hero-cta-wrapper">
-                    <a href="#contact" class="cta-button">Own Your Category</a>
-                    <a href="#media-hits" class="cta-button-secondary">Explore Latest Media</a>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>PR That Helps You <span>Own Your Category</span> Instead of Just Appearing in It</h1>
+                    <p class="hero-subtitle">We Turn Your Project into the Reference Point for Your Entire Niche</p>
+                    <p class="hero-description">
+                        You become the project everyone talks about in your category. Narratives crafted by Web3 natives and amplified across the entire ecosystem. Your story reaches every place where your audience listens, learns, and invests.
+                    </p>
+                    <div class="hero-cta-wrapper">
+                        <a href="#contact" class="cta-button">Own Your Category</a>
+                        <a href="#media-hits" class="cta-button-secondary">Explore Latest Media</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <span class="hero-visual-text">PR</span>
                 </div>
             </div>
         </div>
@@ -1332,90 +1498,69 @@
         <div class="container">
             <h2 class="section-title">LATEST MEDIA HITS WE LANDED FOR OUR CLIENTS</h2>
             <p class="section-subtitle">Recent placements across top-tier crypto publications</p>
-            <div class="media-grid">
-                <div class="media-card">
-                    <div class="media-image">
-                        <div class="media-placeholder" style="background: linear-gradient(135deg, #02AED6 0%, #2F3A63 100%);"></div>
-                    </div>
-                    <div class="media-content">
-                        <div class="media-publication">
-                            <span class="pub-badge">NewsBTC</span>
-                            <span class="pub-date">Dec 15, 2024</span>
+
+            <div class="media-carousel-wrapper">
+                <button class="carousel-arrow carousel-prev" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="media-carousel">
+                    <div class="media-carousel-track">
+                        <div class="media-card">
+                            <div class="media-image">
+                                <div class="media-placeholder" style="background: linear-gradient(135deg, #02AED6 0%, #2F3A63 100%);"></div>
+                            </div>
+                            <div class="media-content">
+                                <div class="media-publication">
+                                    <span class="pub-badge">NewsBTC</span>
+                                    <span class="pub-date">Dec 15, 2024</span>
+                                </div>
+                                <h3 class="media-title">Revolutionary DeFi Protocol Launches Cross-Chain Liquidity Solution</h3>
+                                <a href="#" class="media-link">Read Article →</a>
+                            </div>
                         </div>
-                        <h3 class="media-title">Revolutionary DeFi Protocol Launches Cross-Chain Liquidity Solution</h3>
-                        <a href="#" class="media-link">Read Article →</a>
+
+                        <div class="media-card">
+                            <div class="media-image">
+                                <div class="media-placeholder" style="background: linear-gradient(135deg, #F8673C 0%, #02AED6 100%);"></div>
+                            </div>
+                            <div class="media-content">
+                                <div class="media-publication">
+                                    <span class="pub-badge">CoinTelegraph</span>
+                                    <span class="pub-date">Dec 12, 2024</span>
+                                </div>
+                                <h3 class="media-title">Gaming Platform Achieves 500K Active Users in Record Time</h3>
+                                <a href="#" class="media-link">Read Article →</a>
+                            </div>
+                        </div>
+
+                        <div class="media-card">
+                            <div class="media-image">
+                                <div class="media-placeholder" style="background: linear-gradient(135deg, #2F3A63 0%, #02AED6 100%);"></div>
+                            </div>
+                            <div class="media-content">
+                                <div class="media-publication">
+                                    <span class="pub-badge">BeInCrypto</span>
+                                    <span class="pub-date">Dec 10, 2024</span>
+                                </div>
+                                <h3 class="media-title">Layer 2 Solution Reduces Gas Fees by 90% with New Technology</h3>
+                                <a href="#" class="media-link">Read Article →</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="media-card">
-                    <div class="media-image">
-                        <div class="media-placeholder" style="background: linear-gradient(135deg, #F8673C 0%, #02AED6 100%);"></div>
-                    </div>
-                    <div class="media-content">
-                        <div class="media-publication">
-                            <span class="pub-badge">CoinTelegraph</span>
-                            <span class="pub-date">Dec 12, 2024</span>
-                        </div>
-                        <h3 class="media-title">Gaming Platform Achieves 500K Active Users in Record Time</h3>
-                        <a href="#" class="media-link">Read Article →</a>
-                    </div>
-                </div>
+                <button class="carousel-arrow carousel-next" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
 
-                <div class="media-card">
-                    <div class="media-image">
-                        <div class="media-placeholder" style="background: linear-gradient(135deg, #2F3A63 0%, #02AED6 100%);"></div>
-                    </div>
-                    <div class="media-content">
-                        <div class="media-publication">
-                            <span class="pub-badge">BeInCrypto</span>
-                            <span class="pub-date">Dec 10, 2024</span>
-                        </div>
-                        <h3 class="media-title">Layer 2 Solution Reduces Gas Fees by 90% with New Technology</h3>
-                        <a href="#" class="media-link">Read Article →</a>
-                    </div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-image">
-                        <div class="media-placeholder" style="background: linear-gradient(135deg, #02AED6 0%, #F8673C 100%);"></div>
-                    </div>
-                    <div class="media-content">
-                        <div class="media-publication">
-                            <span class="pub-badge">AMB Crypto</span>
-                            <span class="pub-date">Dec 8, 2024</span>
-                        </div>
-                        <h3 class="media-title">NFT Marketplace Surpasses $100M in Trading Volume Milestone</h3>
-                        <a href="#" class="media-link">Read Article →</a>
-                    </div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-image">
-                        <div class="media-placeholder" style="background: linear-gradient(135deg, #2F3A63 0%, #F8673C 100%);"></div>
-                    </div>
-                    <div class="media-content">
-                        <div class="media-publication">
-                            <span class="pub-badge">CryptoSlate</span>
-                            <span class="pub-date">Dec 5, 2024</span>
-                        </div>
-                        <h3 class="media-title">Blockchain Infrastructure Secures $50M Series B Funding Round</h3>
-                        <a href="#" class="media-link">Read Article →</a>
-                    </div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-image">
-                        <div class="media-placeholder" style="background: linear-gradient(135deg, #F8673C 0%, #2F3A63 100%);"></div>
-                    </div>
-                    <div class="media-content">
-                        <div class="media-publication">
-                            <span class="pub-badge">Decrypt</span>
-                            <span class="pub-date">Dec 3, 2024</span>
-                        </div>
-                        <h3 class="media-title">Web3 Startup Partners with Major Exchange for Token Launch</h3>
-                        <a href="#" class="media-link">Read Article →</a>
-                    </div>
-                </div>
+            <div class="media-cta">
+                <a href="#services" class="cta-button">See More Case Studies</a>
             </div>
         </div>
     </section>
@@ -1544,24 +1689,30 @@
             </div>
             <div class="why-cards">
                 <div class="why-card">
-                    <div class="why-number">1</div>
-                    <h3>CATEGORY-OWNERS, NOT PRESS HUNTERS</h3>
-                    <p>We don't chase random mentions. We build category leadership, turning your project into the reference point for your entire niche.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-number">2</div>
-                    <h3>NARRATIVE + DISTRIBUTION BUILT FOR WEB3</h3>
-                    <p>Stories crafted by Web3 natives, amplified across the entire ecosystem.</p>
-                    <div class="why-detail">
-                        <p>Zuvomo's strength is simple: We deeply understand founders, roadmaps, token design, liquidity, gameplay loops, RWA cycles, TVL trends — because we come from the space.</p>
+                    <div class="why-card-image">
+                        <div class="why-number">1</div>
+                    </div>
+                    <div class="why-card-content">
+                        <h3>CATEGORY-OWNERS, NOT PRESS HUNTERS</h3>
+                        <p>We build category leadership, turning your project into the reference point for your entire niche.</p>
                     </div>
                 </div>
                 <div class="why-card">
-                    <div class="why-number">3</div>
-                    <h3>OUTCOME-FOCUSED, NOT RETAINER-FOCUSED</h3>
-                    <p>PR that places you at the center of every important conversation.</p>
-                    <div class="why-detail">
-                        <p>You don't pay us for tasks. You pay us for trajectory.</p>
+                    <div class="why-card-image">
+                        <div class="why-number">2</div>
+                    </div>
+                    <div class="why-card-content">
+                        <h3>NARRATIVE + DISTRIBUTION BUILT FOR WEB3</h3>
+                        <p>Stories crafted by Web3 natives, amplified across the entire ecosystem. We understand founders, roadmaps, token design, and Web3 mechanics.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-image">
+                        <div class="why-number">3</div>
+                    </div>
+                    <div class="why-card-content">
+                        <h3>OUTCOME-FOCUSED, NOT RETAINER-FOCUSED</h3>
+                        <p>PR that places you at the center of every important conversation. You don't pay us for tasks, you pay us for trajectory.</p>
                     </div>
                 </div>
             </div>
@@ -1571,122 +1722,114 @@
         </div>
     </section>
 
-    <!-- Services Section with Card Swap -->
+    <!-- Case Studies Section with Card Swap -->
     <section class="services">
         <div class="container">
-            <h2 class="section-title">How We Make You Impossible to Ignore</h2>
-            <p class="section-subtitle">Strategic PR that places you at the center of every important conversation</p>
-            
+            <h2 class="section-title">Success Stories</h2>
+            <p class="section-subtitle">Real results from clients who now own their categories</p>
+
             <div class="services-wrapper">
                 <div class="services-content">
                     <div class="service-grid">
                         <div class="service-badge">
-                            <span class="badge-icon">📰</span>
-                            <span class="badge-text">PR Articles on 100+ Top Crypto Websites</span>
-                        </div>
-                        <div class="service-badge">
-                            <span class="badge-icon">🐦</span>
-                            <span class="badge-text">KOL Marketing on X (Twitter)</span>
-                        </div>
-                        <div class="service-badge">
-                            <span class="badge-icon">💹</span>
-                            <span class="badge-text">Binance Square & Exchange Feeds</span>
-                        </div>
-                        <div class="service-badge">
-                            <span class="badge-icon">📺</span>
-                            <span class="badge-text">YouTube Influencer Reviews</span>
-                        </div>
-                        <div class="service-badge">
-                            <span class="badge-icon">🔥</span>
-                            <span class="badge-text">Reddit & Medium Campaigns</span>
-                        </div>
-                        <div class="service-badge">
-                            <span class="badge-icon">💎</span>
-                            <span class="badge-text">In-House KOL Shilling Network</span>
+                            <span class="badge-icon">📊</span>
+                            <span class="badge-text">Proven Track Record Across Web3</span>
                         </div>
                         <div class="service-badge">
                             <span class="badge-icon">🎯</span>
-                            <span class="badge-text">Banner Ads on 100+ Crypto Outlets</span>
+                            <span class="badge-text">Category Leadership Achieved</span>
                         </div>
                         <div class="service-badge">
-                            <span class="badge-icon">🚀</span>
-                            <span class="badge-text">Viral Social Media Management</span>
+                            <span class="badge-icon">📈</span>
+                            <span class="badge-text">Measurable Growth & Visibility</span>
+                        </div>
+                        <div class="service-badge">
+                            <span class="badge-icon">💬</span>
+                            <span class="badge-text">Industry Reference Point Status</span>
+                        </div>
+                        <div class="service-badge">
+                            <span class="badge-icon">🏆</span>
+                            <span class="badge-text">Top-of-Mind Awareness Built</span>
+                        </div>
+                        <div class="service-badge">
+                            <span class="badge-icon">✨</span>
+                            <span class="badge-text">Narrative Dominance Secured</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card-swap-section">
                     <div class="card-swap-container" id="cardSwap">
                         <div class="card" data-order="0">
                             <div class="card-inner">
                                 <div class="card-header">
                                     <span class="card-number">01</span>
-                                    <span class="card-badge">STRATEGIC</span>
+                                    <span class="card-badge">DEFI</span>
                                 </div>
-                                <h3>Category Ownership</h3>
+                                <h3>DeFi Liquidity Protocol</h3>
                                 <div class="card-metrics">
                                     <div class="metric">
-                                        <span class="metric-value">Own</span>
-                                        <span class="metric-label">Your Niche</span>
+                                        <span class="metric-value">500%</span>
+                                        <span class="metric-label">TVL Growth</span>
                                     </div>
                                     <div class="metric">
-                                        <span class="metric-value">Lead</span>
-                                        <span class="metric-label">Conversations</span>
+                                        <span class="metric-value">#1</span>
+                                        <span class="metric-label">Category Leader</span>
                                     </div>
                                 </div>
-                                <p>PR that helps you own your category instead of just appearing in it. We turn your project into the reference point for your entire niche. You become the project everyone talks about.</p>
+                                <p>Transformed from unknown protocol to the go-to reference for liquidity solutions. Now cited as the industry standard in every major discussion about automated market making.</p>
                                 <div class="card-footer">
-                                    <span class="card-price">Strategic Positioning</span>
+                                    <span class="card-price">6-Month Campaign</span>
                                     <span class="card-arrow">→</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="card" data-order="1">
                             <div class="card-inner">
                                 <div class="card-header">
                                     <span class="card-number">02</span>
-                                    <span class="card-badge">AMPLIFIED</span>
+                                    <span class="card-badge">GAMING</span>
                                 </div>
-                                <h3>Narrative + Distribution</h3>
+                                <h3>NFT Gaming Platform</h3>
                                 <div class="card-metrics">
                                     <div class="metric">
-                                        <span class="metric-value">Web3</span>
-                                        <span class="metric-label">Natives</span>
+                                        <span class="metric-value">1M+</span>
+                                        <span class="metric-label">Active Users</span>
                                     </div>
                                     <div class="metric">
-                                        <span class="metric-value">Full</span>
-                                        <span class="metric-label">Ecosystem</span>
+                                        <span class="metric-value">Top</span>
+                                        <span class="metric-label">of Mind</span>
                                     </div>
                                 </div>
-                                <p>Narratives crafted by Web3 natives and amplified across the entire ecosystem. Your story reaches every place where your audience listens, learns, and invests. We build the presence that makes you impossible to ignore.</p>
+                                <p>Positioned as the default voice in play-to-earn conversations. Every major outlet now quotes them when discussing the future of blockchain gaming.</p>
                                 <div class="card-footer">
-                                    <span class="card-price">Ecosystem-Wide Impact</span>
+                                    <span class="card-price">4-Month Campaign</span>
                                     <span class="card-arrow">→</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="card" data-order="2">
                             <div class="card-inner">
                                 <div class="card-header">
                                     <span class="card-number">03</span>
-                                    <span class="card-badge">OUTCOME FOCUSED</span>
+                                    <span class="card-badge">LAYER 2</span>
                                 </div>
-                                <h3>Become The Default Voice</h3>
+                                <h3>Layer 2 Scaling Solution</h3>
                                 <div class="card-metrics">
                                     <div class="metric">
-                                        <span class="metric-value">Center</span>
-                                        <span class="metric-label">Stage</span>
+                                        <span class="metric-value">90%</span>
+                                        <span class="metric-label">Gas Reduction</span>
                                     </div>
                                     <div class="metric">
-                                        <span class="metric-value">Every</span>
-                                        <span class="metric-label">Conversation</span>
+                                        <span class="metric-value">50+</span>
+                                        <span class="metric-label">Media Mentions</span>
                                     </div>
                                 </div>
-                                <p>PR that moves your project forward by placing you at the center of every important conversation. Your narrative becomes the default voice in your category. Results that matter, not just vanity metrics.</p>
+                                <p>Made impossible to ignore in scalability discussions. They're now the reference point everyone compares themselves against in the L2 ecosystem.</p>
                                 <div class="card-footer">
-                                    <span class="card-price">Measurable Outcomes</span>
+                                    <span class="card-price">5-Month Campaign</span>
                                     <span class="card-arrow">→</span>
                                 </div>
                             </div>
@@ -1913,7 +2056,7 @@
 
         // Accessibility: Reduce motion for users who prefer it
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-        
+
         function handleReducedMotion() {
             const tracks = document.querySelectorAll('.logo-loop-track');
             if (prefersReducedMotion.matches) {
@@ -1922,9 +2065,106 @@
                 });
             }
         }
-        
+
         handleReducedMotion();
         prefersReducedMotion.addEventListener('change', handleReducedMotion);
+
+        // Media Carousel Functionality
+        const initMediaCarousel = () => {
+            const carouselTrack = document.querySelector('.media-carousel-track');
+            const prevButton = document.querySelector('.carousel-prev');
+            const nextButton = document.querySelector('.carousel-next');
+
+            if (!carouselTrack || !prevButton || !nextButton) return;
+
+            const mediaCards = Array.from(carouselTrack.querySelectorAll('.media-card'));
+            let currentIndex = 0;
+            let cardsPerView = 3;
+
+            // Calculate cards per view based on screen size
+            const updateCardsPerView = () => {
+                const width = window.innerWidth;
+                if (width < 768) {
+                    cardsPerView = 1;
+                } else if (width < 1024) {
+                    cardsPerView = 2;
+                } else {
+                    cardsPerView = 3;
+                }
+                updateCarousel();
+            };
+
+            const updateCarousel = () => {
+                const cardWidth = mediaCards[0].offsetWidth;
+                const gap = 30;
+                const offset = -(currentIndex * (cardWidth + gap));
+
+                carouselTrack.style.transform = `translateX(${offset}px)`;
+
+                // Update arrow states
+                prevButton.disabled = currentIndex === 0;
+                nextButton.disabled = currentIndex >= mediaCards.length - cardsPerView;
+
+                // Add visual feedback for disabled state
+                if (prevButton.disabled) {
+                    prevButton.style.opacity = '0.3';
+                    prevButton.style.cursor = 'not-allowed';
+                } else {
+                    prevButton.style.opacity = '1';
+                    prevButton.style.cursor = 'pointer';
+                }
+
+                if (nextButton.disabled) {
+                    nextButton.style.opacity = '0.3';
+                    nextButton.style.cursor = 'not-allowed';
+                } else {
+                    nextButton.style.opacity = '1';
+                    nextButton.style.cursor = 'pointer';
+                }
+            };
+
+            const goToPrev = () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            };
+
+            const goToNext = () => {
+                if (currentIndex < mediaCards.length - cardsPerView) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            };
+
+            // Event listeners
+            prevButton.addEventListener('click', goToPrev);
+            nextButton.addEventListener('click', goToNext);
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    goToPrev();
+                } else if (e.key === 'ArrowRight') {
+                    goToNext();
+                }
+            });
+
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    updateCardsPerView();
+                }, 250);
+            });
+
+            // Initial setup
+            updateCardsPerView();
+        };
+
+        // Initialize carousel when DOM is ready
+        initMediaCarousel();
 
         // CardSwap Animation - ReactBits Style
         class CardSwap {
