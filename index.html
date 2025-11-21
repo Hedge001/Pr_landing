@@ -986,6 +986,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+        }
+
+        .why-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .why-card-content {
@@ -1007,7 +1018,8 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--white);
-            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
         }
 
         .why-card h3 {
@@ -1763,6 +1775,7 @@
             <div class="why-cards">
                 <div class="why-card">
                     <div class="why-card-image">
+                        <img src="images/why_zuvomo_01.jpg" alt="Category Ownership">
                         <div class="why-number">1</div>
                     </div>
                     <div class="why-card-content">
@@ -1772,6 +1785,7 @@
                 </div>
                 <div class="why-card">
                     <div class="why-card-image">
+                        <img src="images/why_zuvomo_02.jpg" alt="Narrative Distribution">
                         <div class="why-number">2</div>
                     </div>
                     <div class="why-card-content">
@@ -1781,6 +1795,7 @@
                 </div>
                 <div class="why-card">
                     <div class="why-card-image">
+                        <img src="images/why_zuvomo_03.jpg" alt="Outcome Focused">
                         <div class="why-number">3</div>
                     </div>
                     <div class="why-card-content">
