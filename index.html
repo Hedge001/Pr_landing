@@ -1145,6 +1145,147 @@
             transform: translateY(-3px);
         }
 
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-category {
+            margin-bottom: 80px;
+        }
+
+        .pricing-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .pricing-category-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--cyan);
+            margin-bottom: 40px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--medium-gray);
+            border-radius: 15px;
+            padding: 40px 30px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyan);
+            box-shadow: 0 15px 40px rgba(2, 174, 214, 0.3);
+        }
+
+        .pricing-card.active {
+            border-color: var(--cyan);
+            background: rgba(2, 174, 214, 0.1);
+        }
+
+        .pricing-type {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--cyan);
+            margin-bottom: 15px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .pricing-price {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .pricing-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-weight: 700;
+        }
+
+        .pricing-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            border: 2px solid var(--cyan);
+            color: var(--cyan);
+            text-align: center;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .pricing-button:hover {
+            background: var(--cyan);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .pricing-card.active .pricing-button {
+            background: var(--cyan);
+            color: var(--white);
+        }
+
+        .pricing-card.active .pricing-button:hover {
+            background: transparent;
+            color: var(--cyan);
+        }
+
         /* FAQ Section */
         .faq {
             padding: 80px 0;
@@ -1280,6 +1421,11 @@
             .services-wrapper {
                 grid-template-columns: 1fr;
                 gap: 60px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
             }
 
             .card-swap-section {
@@ -1931,6 +2077,116 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <h2 class="section-title">PR Packages & Pricing</h2>
+                <p class="section-subtitle">Choose the perfect package for your needs</p>
+            </div>
+
+            <!-- Press Release Packages -->
+            <div class="pricing-category">
+                <h3 class="pricing-category-title">Press Release Packages</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-type">Starter</div>
+                        <div class="pricing-price">$499<span> /package</span></div>
+                        <p class="pricing-description">Perfect for launching your project</p>
+                        <ul class="pricing-features">
+                            <li>3 Press Releases</li>
+                            <li>Tier 2-3 Publications</li>
+                            <li>Basic Distribution</li>
+                            <li>Writing & Editing</li>
+                            <li>2 Revisions</li>
+                        </ul>
+                        <a href="#contact" class="pricing-button">Get Started</a>
+                    </div>
+
+                    <div class="pricing-card active">
+                        <div class="pricing-type">Professional</div>
+                        <div class="pricing-price">$999<span> /package</span></div>
+                        <p class="pricing-description">Most popular for established projects</p>
+                        <ul class="pricing-features">
+                            <li>5 Press Releases</li>
+                            <li>Tier 1-2 Publications</li>
+                            <li>Wide Distribution</li>
+                            <li>Professional Writing</li>
+                            <li>Unlimited Revisions</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <a href="#contact" class="pricing-button">Get Started</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-type">Enterprise</div>
+                        <div class="pricing-price">$1,999<span> /package</span></div>
+                        <p class="pricing-description">Maximum exposure and reach</p>
+                        <ul class="pricing-features">
+                            <li>10 Press Releases</li>
+                            <li>All Tier 1 Publications</li>
+                            <li>Premium Distribution</li>
+                            <li>Dedicated PR Manager</li>
+                            <li>Crisis Management</li>
+                            <li>Analytics Dashboard</li>
+                        </ul>
+                        <a href="#contact" class="pricing-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guest Post Packages -->
+            <div class="pricing-category">
+                <h3 class="pricing-category-title">Guest Post Packages</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-type">Starter</div>
+                        <div class="pricing-price">$599<span> /package</span></div>
+                        <p class="pricing-description">Build your thought leadership</p>
+                        <ul class="pricing-features">
+                            <li>2 Guest Posts</li>
+                            <li>Tier 2-3 Publications</li>
+                            <li>Topic Research</li>
+                            <li>SEO Optimization</li>
+                            <li>2 Revisions</li>
+                        </ul>
+                        <a href="#contact" class="pricing-button">Get Started</a>
+                    </div>
+
+                    <div class="pricing-card active">
+                        <div class="pricing-type">Professional</div>
+                        <div class="pricing-price">$1,199<span> /package</span></div>
+                        <p class="pricing-description">Establish authority in your niche</p>
+                        <ul class="pricing-features">
+                            <li>4 Guest Posts</li>
+                            <li>Tier 1-2 Publications</li>
+                            <li>Expert Writer Match</li>
+                            <li>Backlink Strategy</li>
+                            <li>Unlimited Revisions</li>
+                            <li>Content Promotion</li>
+                        </ul>
+                        <a href="#contact" class="pricing-button">Get Started</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-type">Enterprise</div>
+                        <div class="pricing-price">$2,499<span> /package</span></div>
+                        <p class="pricing-description">Dominate your category narrative</p>
+                        <ul class="pricing-features">
+                            <li>8 Guest Posts</li>
+                            <li>All Tier 1 Publications</li>
+                            <li>Thought Leadership</li>
+                            <li>Link Building Campaign</li>
+                            <li>Dedicated Writer</li>
+                            <li>Performance Tracking</li>
+                        </ul>
+                        <a href="#contact" class="pricing-button">Get Started</a>
                     </div>
                 </div>
             </div>
