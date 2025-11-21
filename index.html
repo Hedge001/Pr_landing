@@ -658,36 +658,114 @@
             z-index: 2;
         }
 
-        .service-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
+        /* Animated List Styles */
+        .scroll-list-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
         }
 
-        .service-badge {
+        .scroll-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 16px;
+        }
+
+        .scroll-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scroll-list::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        .scroll-list::-webkit-scrollbar-thumb {
+            background: rgba(47, 58, 99, 0.6);
+            border-radius: 4px;
+        }
+
+        .scroll-list::-webkit-scrollbar-thumb:hover {
+            background: rgba(2, 174, 214, 0.6);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .animated-item {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.7);
+            transition: all 0.2s ease;
+        }
+
+        .animated-item.in-view {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .list-item {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 12px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 50px;
+            padding: 16px 20px;
+            background: rgba(47, 58, 99, 0.3);
+            border-radius: 12px;
             transition: all 0.3s;
             border: 1px solid rgba(2, 174, 214, 0.2);
         }
 
-        .service-badge:hover {
-            background: rgba(2, 174, 214, 0.1);
-            transform: translateX(10px);
+        .list-item.selected {
+            background: rgba(2, 174, 214, 0.2);
+            border-color: var(--cyan);
+            transform: translateX(8px);
+        }
+
+        .list-item:hover {
+            background: rgba(2, 174, 214, 0.15);
             border-color: var(--cyan);
         }
 
-        .badge-icon {
+        .item-icon {
             font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
-        .badge-text {
-            font-size: 0.95rem;
+        .item-text {
             color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .top-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--black), transparent);
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+
+        .bottom-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--black), transparent);
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 10;
         }
 
         /* Card Swap Container - ReactBits Style */
@@ -1330,19 +1408,23 @@
                 padding: 60px 0;
             }
 
-            .service-grid {
-                gap: 10px;
+            .scroll-list-container {
+                max-width: 100%;
             }
 
-            .service-badge {
-                padding: 10px 15px;
+            .scroll-list {
+                max-height: 350px;
             }
 
-            .badge-icon {
-                font-size: 1.2rem;
+            .list-item {
+                padding: 12px 16px;
             }
 
-            .badge-text {
+            .item-icon {
+                font-size: 1.3rem;
+            }
+
+            .item-text {
                 font-size: 0.85rem;
             }
 
@@ -1726,31 +1808,47 @@
 
             <div class="services-wrapper">
                 <div class="services-content">
-                    <div class="service-grid">
-                        <div class="service-badge">
-                            <span class="badge-icon">📊</span>
-                            <span class="badge-text">Proven Track Record Across Web3</span>
+                    <div class="scroll-list-container">
+                        <div class="scroll-list" id="animatedList">
+                            <div class="animated-item" data-index="0">
+                                <div class="list-item">
+                                    <span class="item-icon">📊</span>
+                                    <p class="item-text">Proven Track Record Across Web3</p>
+                                </div>
+                            </div>
+                            <div class="animated-item" data-index="1">
+                                <div class="list-item">
+                                    <span class="item-icon">🎯</span>
+                                    <p class="item-text">Category Leadership Achieved</p>
+                                </div>
+                            </div>
+                            <div class="animated-item" data-index="2">
+                                <div class="list-item">
+                                    <span class="item-icon">📈</span>
+                                    <p class="item-text">Measurable Growth & Visibility</p>
+                                </div>
+                            </div>
+                            <div class="animated-item" data-index="3">
+                                <div class="list-item">
+                                    <span class="item-icon">💬</span>
+                                    <p class="item-text">Industry Reference Point Status</p>
+                                </div>
+                            </div>
+                            <div class="animated-item" data-index="4">
+                                <div class="list-item">
+                                    <span class="item-icon">🏆</span>
+                                    <p class="item-text">Top-of-Mind Awareness Built</p>
+                                </div>
+                            </div>
+                            <div class="animated-item" data-index="5">
+                                <div class="list-item">
+                                    <span class="item-icon">✨</span>
+                                    <p class="item-text">Narrative Dominance Secured</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="service-badge">
-                            <span class="badge-icon">🎯</span>
-                            <span class="badge-text">Category Leadership Achieved</span>
-                        </div>
-                        <div class="service-badge">
-                            <span class="badge-icon">📈</span>
-                            <span class="badge-text">Measurable Growth & Visibility</span>
-                        </div>
-                        <div class="service-badge">
-                            <span class="badge-icon">💬</span>
-                            <span class="badge-text">Industry Reference Point Status</span>
-                        </div>
-                        <div class="service-badge">
-                            <span class="badge-icon">🏆</span>
-                            <span class="badge-text">Top-of-Mind Awareness Built</span>
-                        </div>
-                        <div class="service-badge">
-                            <span class="badge-icon">✨</span>
-                            <span class="badge-text">Narrative Dominance Secured</span>
-                        </div>
+                        <div class="top-gradient" style="opacity: 0;"></div>
+                        <div class="bottom-gradient" style="opacity: 1;"></div>
                     </div>
                 </div>
 
@@ -2161,6 +2259,138 @@
 
         // Initialize carousel when DOM is ready
         initMediaCarousel();
+
+        // Animated List Functionality
+        const initAnimatedList = () => {
+            const listContainer = document.getElementById('animatedList');
+            const topGradient = document.querySelector('.scroll-list-container .top-gradient');
+            const bottomGradient = document.querySelector('.scroll-list-container .bottom-gradient');
+            const items = Array.from(listContainer.querySelectorAll('.animated-item'));
+
+            let selectedIndex = -1;
+            let keyboardNav = false;
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                root: listContainer,
+                threshold: 0.5,
+                rootMargin: '0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    } else {
+                        entry.target.classList.remove('in-view');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all items
+            items.forEach(item => observer.observe(item));
+
+            // Handle scroll for gradients
+            const handleScroll = (e) => {
+                const { scrollTop, scrollHeight, clientHeight } = e.target;
+
+                // Top gradient opacity
+                const topOpacity = Math.min(scrollTop / 50, 1);
+                topGradient.style.opacity = topOpacity;
+
+                // Bottom gradient opacity
+                const bottomDistance = scrollHeight - (scrollTop + clientHeight);
+                const bottomOpacity = scrollHeight <= clientHeight ? 0 : Math.min(bottomDistance / 50, 1);
+                bottomGradient.style.opacity = bottomOpacity;
+            };
+
+            listContainer.addEventListener('scroll', handleScroll);
+
+            // Mouse hover selection
+            items.forEach((item, index) => {
+                const listItem = item.querySelector('.list-item');
+
+                item.addEventListener('mouseenter', () => {
+                    setSelectedIndex(index);
+                });
+
+                item.addEventListener('click', () => {
+                    setSelectedIndex(index);
+                    console.log('Item clicked:', items[index].querySelector('.item-text').textContent, index);
+                });
+            });
+
+            // Set selected index
+            const setSelectedIndex = (index) => {
+                // Remove previous selection
+                items.forEach(item => {
+                    item.querySelector('.list-item').classList.remove('selected');
+                });
+
+                // Set new selection
+                if (index >= 0 && index < items.length) {
+                    selectedIndex = index;
+                    items[index].querySelector('.list-item').classList.add('selected');
+                }
+            };
+
+            // Keyboard navigation
+            const handleKeyDown = (e) => {
+                if (e.key === 'ArrowDown' || (e.key === 'Tab' && !e.shiftKey)) {
+                    e.preventDefault();
+                    keyboardNav = true;
+                    const newIndex = Math.min(selectedIndex + 1, items.length - 1);
+                    setSelectedIndex(newIndex);
+                    scrollToItem(newIndex);
+                } else if (e.key === 'ArrowUp' || (e.key === 'Tab' && e.shiftKey)) {
+                    e.preventDefault();
+                    keyboardNav = true;
+                    const newIndex = Math.max(selectedIndex - 1, 0);
+                    setSelectedIndex(newIndex);
+                    scrollToItem(newIndex);
+                } else if (e.key === 'Enter') {
+                    if (selectedIndex >= 0 && selectedIndex < items.length) {
+                        e.preventDefault();
+                        console.log('Item selected:', items[selectedIndex].querySelector('.item-text').textContent, selectedIndex);
+                    }
+                }
+            };
+
+            // Scroll to item
+            const scrollToItem = (index) => {
+                if (!keyboardNav || index < 0 || index >= items.length) return;
+
+                const item = items[index];
+                const extraMargin = 50;
+                const containerScrollTop = listContainer.scrollTop;
+                const containerHeight = listContainer.clientHeight;
+                const itemTop = item.offsetTop - listContainer.offsetTop;
+                const itemBottom = itemTop + item.offsetHeight;
+
+                if (itemTop < containerScrollTop + extraMargin) {
+                    listContainer.scrollTo({
+                        top: itemTop - extraMargin,
+                        behavior: 'smooth'
+                    });
+                } else if (itemBottom > containerScrollTop + containerHeight - extraMargin) {
+                    listContainer.scrollTo({
+                        top: itemBottom - containerHeight + extraMargin,
+                        behavior: 'smooth'
+                    });
+                }
+
+                keyboardNav = false;
+            };
+
+            // Add keyboard event listener
+            window.addEventListener('keydown', handleKeyDown);
+
+            // Initial trigger for gradients
+            handleScroll({ target: listContainer });
+        };
+
+        // Initialize animated list
+        initAnimatedList();
 
         // CardSwap Animation - ReactBits Style
         class CardSwap {
