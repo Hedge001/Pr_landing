@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuvomo PR - Get Your Crypto Project Featured on Top Publications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Primary Colors */
+            --cyan: #02AED6;
+            --navy: #2F3A63;
+            --orange: #F8673C;
+            --dark-gray: #262A2D;
+            --white: #FFFFFF;
+            
+            /* Secondary Colors */
+            --black: #222222;
+            --medium-gray: #3F4042;
+            --light-blue: #F6FBFF;
+            
+            /* Gradients using brand colors */
+            --gradient-1: linear-gradient(135deg, #02AED6 0%, #2F3A63 100%);
+            --gradient-2: linear-gradient(135deg, #F8673C 0%, #02AED6 100%);
+            --gradient-dark: linear-gradient(135deg, #262A2D 0%, #222222 100%);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-gray);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--dark-gray);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(47, 58, 99, 0.3);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .nav-cta {
+            background: var(--cyan);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            border: 2px solid var(--cyan);
+            color: var(--cyan);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(180deg, var(--navy) 0%, var(--dark-gray) 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            text-align: left;
+            animation: fadeInUp 1s ease-out;
+            max-width: 900px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 25px;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            color: var(--cyan);
+            display: inline-block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--cyan);
+            margin-bottom: 25px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            margin-bottom: 40px;
+            max-width: 650px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+        }
+
+        .hero-cta-wrapper {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--orange);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--orange);
+            transform: translateY(-3px);
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--cyan);
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--cyan);
+        }
+
+        .cta-button-secondary:hover {
+            background: var(--cyan);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Latest Media Hits Section */
+        .media-hits {
+            padding: 80px 0;
+            background: var(--dark-gray);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .media-card {
+            background: var(--medium-gray);
+            border: 2px solid transparent;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyan);
+            box-shadow: 0 10px 30px rgba(2, 174, 214, 0.2);
+        }
+
+        .media-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .media-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .media-content {
+            padding: 25px;
+        }
+
+        .media-publication {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .pub-badge {
+            background: var(--cyan);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pub-date {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .media-title {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            color: var(--white);
+            min-height: 68px;
+        }
+
+        .media-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--cyan);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .media-link:hover {
+            color: var(--orange);
+            transform: translateX(5px);
+        }
+
+        .media-card:hover .media-link {
+            color: var(--orange);
+        }
+
+        /* Publication Logos Section */
+        .publications {
+            padding: 80px 0;
+            background: var(--black);
+        }
+
+        .section-title {
+            font-family: 'Ubuntu', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            color: var(--cyan);
+        }
+
+        /* Logo Loop Styles */
+        .logo-loop-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .logo-loop-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-left 30s linear infinite;
+            will-change: transform;
+        }
+
+        .logo-loop-track.reverse {
+            animation: scroll-right 35s linear infinite;
+        }
+
+        .logo-loop-container:hover .logo-loop-track {
+            animation-play-state: paused;
+        }
+
+        .logo-loop-list {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding-right: 50px;
+            list-style: none;
+        }
+
+        .logo-item {
+            flex: 0 0 auto;
+            background: var(--white);
+            padding: 15px 25px;
+            border-radius: 15px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 160px;
+            height: 80px;
+        }
+
+        .logo-item:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: var(--white);
+            border: 2px solid var(--cyan);
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(2, 174, 214, 0.3);
+        }
+
+        .logo-item span {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+            display: inline-block;
+        }
+
+        .logo-image {
+            max-height: 60px;
+            max-width: 140px;
+            height: auto;
+            width: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Client logos specific styling for better fit */
+        .trusted-clients .logo-item {
+            background: var(--white);
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trusted-clients .logo-image {
+            max-height: 50px;
+            max-width: 130px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes scroll-right {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Fade edges */
+        .logo-loop-container::before,
+        .logo-loop-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .logo-loop-container::before {
+            left: 0;
+            background: linear-gradient(to right, var(--black) 0%, transparent 100%);
+        }
+
+        .logo-loop-container::after {
+            right: 0;
+            background: linear-gradient(to left, var(--black) 0%, transparent 100%);
+        }
+
+        .featured-in .logo-loop-container::before {
+            background: linear-gradient(to right, var(--dark-gray) 0%, transparent 100%);
+        }
+
+        .featured-in .logo-loop-container::after {
+            background: linear-gradient(to left, var(--dark-gray) 0%, transparent 100%);
+        }
+
+        .trusted-clients .logo-loop-container::before {
+            background: linear-gradient(to right, var(--black) 0%, transparent 100%);
+        }
+
+        .trusted-clients .logo-loop-container::after {
+            background: linear-gradient(to left, var(--black) 0%, transparent 100%);
+        }
+
+        /* Featured In Section */
+        .featured-in {
+            padding: 80px 0;
+            background: var(--dark-gray);
+        }
+
+        /* Trusted Clients Section */
+        .trusted-clients {
+            padding: 80px 0;
+            background: var(--black);
+        }
+
+        .trust-badge {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--cyan);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Special logo styling */
+        .logo-special {
+            background: var(--white);
+            border: 2px solid var(--cyan);
+        }
+
+        .logo-special:hover {
+            background: var(--light-blue);
+            transform: scale(1.15) translateY(-8px);
+        }
+
+        .logo-special span {
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .logo-loop-track {
+                animation: none;
+            }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 50%, rgba(2, 174, 214, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .services-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .services-content {
+            z-index: 2;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .service-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50px;
+            transition: all 0.3s;
+            border: 1px solid rgba(2, 174, 214, 0.2);
+        }
+
+        .service-badge:hover {
+            background: rgba(2, 174, 214, 0.1);
+            transform: translateX(10px);
+            border-color: var(--cyan);
+        }
+
+        .badge-icon {
+            font-size: 1.5rem;
+        }
+
+        .badge-text {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Card Swap Container - ReactBits Style */
+        .card-swap-section {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-swap-container {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(5%, 20%);
+            transform-origin: bottom right;
+            perspective: 900px;
+            width: 500px;
+            height: 400px;
+        }
+
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 400px;
+            border-radius: 20px;
+            border: 2px solid rgba(2, 174, 214, 0.3);
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+            transform-style: preserve-3d;
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            cursor: pointer;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--cyan);
+        }
+
+        .card-inner {
+            padding: 40px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-number {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--cyan) 0%, var(--navy) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .card-badge {
+            background: var(--orange);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .card h3 {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+
+        .card-metrics {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+
+        .metric {
+            text-align: left;
+        }
+
+        .metric-value {
+            display: block;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cyan);
+            line-height: 1;
+        }
+
+        .metric-label {
+            display: block;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 5px;
+        }
+
+        .card p {
+            flex: 1;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-price {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--orange);
+        }
+
+        .card-arrow {
+            font-size: 2rem;
+            color: var(--cyan);
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-arrow {
+            transform: translateX(10px);
+        }
+
+        /* Card positioning with skew */
+        .card[data-order="0"] {
+            transform: translate3d(-50%, -50%, 0) skewY(6deg);
+            z-index: 5;
+        }
+
+        .card[data-order="1"] {
+            transform: translate3d(calc(-50% + 60px), calc(-50% - 70px), -90px) skewY(6deg);
+            z-index: 4;
+        }
+
+        .card[data-order="2"] {
+            transform: translate3d(calc(-50% + 120px), calc(-50% - 140px), -180px) skewY(6deg);
+            z-index: 3;
+        }
+
+        .card[data-order="3"] {
+            transform: translate3d(calc(-50% + 180px), calc(-50% - 210px), -270px) skewY(6deg);
+            z-index: 2;
+        }
+
+        .card[data-order="4"] {
+            transform: translate3d(calc(-50% + 240px), calc(-50% - 280px), -360px) skewY(6deg);
+            z-index: 1;
+        }
+
+        /* Why Zuvomo Section */
+        .why-zuvomo {
+            padding: 80px 0;
+            background: var(--black);
+        }
+
+        .why-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 30px auto 50px;
+        }
+
+        .why-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .why-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .why-card {
+            background: var(--medium-gray);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyan);
+            background: rgba(47, 58, 99, 0.3);
+        }
+
+        .why-number {
+            width: 60px;
+            height: 60px;
+            background: var(--cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .why-card h3 {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        .why-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .why-detail {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(2, 174, 214, 0.2);
+        }
+
+        .why-detail p {
+            color: var(--cyan);
+            font-style: italic;
+        }
+
+        .why-cta {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* Contact Form Section */
+        .contact {
+            padding: 80px 0;
+            background: var(--dark-gray);
+        }
+
+        .contact-form-wrapper {
+            max-width: 700px;
+            margin: 50px auto 0;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group label {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .required {
+            color: var(--orange);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: var(--medium-gray);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 15px 20px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: var(--white);
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px rgba(2, 174, 214, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+            accent-color: var(--cyan);
+        }
+
+        .checkbox-group label {
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        .privacy-link {
+            color: var(--cyan);
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        .privacy-link:hover {
+            color: var(--orange);
+        }
+
+        .form-submit {
+            margin-top: 10px;
+            cursor: pointer;
+            border: 2px solid var(--orange);
+        }
+
+        .form-submit:hover {
+            background: transparent;
+            color: var(--orange);
+            transform: translateY(-3px);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: var(--black);
+        }
+
+        .faq-items {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: var(--medium-gray);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--cyan);
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(2, 174, 214, 0.1);
+        }
+
+        .faq-question h3 {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            color: var(--cyan);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 300px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+            color: var(--orange);
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-gray) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            bottom: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(2, 174, 214, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .final-cta h2 {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: var(--cyan);
+            position: relative;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .card-swap-container {
+                width: 450px;
+                height: 360px;
+                transform: translate(0%, 20%) scale(0.9);
+            }
+            
+            .card {
+                width: 450px;
+                height: 360px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .services-wrapper {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .card-swap-section {
+                height: 500px;
+            }
+
+            .card-swap-container {
+                position: relative;
+                transform: translate(0, 0) scale(0.85);
+                margin: 0 auto;
+                left: 50%;
+                transform-origin: center center;
+            }
+
+            .card {
+                width: 450px;
+                height: 360px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-cta-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cta-button, .cta-button-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .media-title {
+                font-size: 1.1rem;
+                min-height: auto;
+            }
+
+            .contact-form-wrapper {
+                padding: 0 10px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                font-size: 0.95rem;
+            }
+
+            .logo-loop-list {
+                gap: 30px;
+                padding-right: 30px;
+            }
+
+            .logo-item {
+                padding: 15px 25px;
+            }
+
+            .logo-item span {
+                font-size: 1rem;
+            }
+
+            .logo-loop-container::before,
+            .logo-loop-container::after {
+                width: 50px;
+            }
+
+            .logo-loop-track {
+                animation-duration: 20s;
+            }
+
+            .logo-loop-track.reverse {
+                animation-duration: 25s;
+            }
+
+            /* Services mobile adjustments */
+            .services {
+                padding: 60px 0;
+            }
+
+            .service-grid {
+                gap: 10px;
+            }
+
+            .service-badge {
+                padding: 10px 15px;
+            }
+
+            .badge-icon {
+                font-size: 1.2rem;
+            }
+
+            .badge-text {
+                font-size: 0.85rem;
+            }
+
+            .card-swap-section {
+                height: 450px;
+            }
+
+            .card-swap-container {
+                transform: scale(0.75) translate(25%, 25%);
+                width: 400px;
+                height: 320px;
+            }
+
+            .card {
+                width: 400px;
+                height: 320px;
+            }
+
+            .card-inner {
+                padding: 30px;
+            }
+
+            .card-number {
+                font-size: 2.5rem;
+            }
+
+            .card h3 {
+                font-size: 1.6rem;
+            }
+
+            .metric-value {
+                font-size: 1.5rem;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-item {
+                padding: 12px 20px;
+            }
+
+            .logo-item span {
+                font-size: 0.9rem;
+            }
+
+            .logo-loop-list {
+                gap: 20px;
+                padding-right: 20px;
+            }
+
+            .services-wrapper {
+                margin-top: 40px;
+            }
+
+            .card-swap-section {
+                height: 400px;
+            }
+
+            .card-swap-container {
+                transform: scale(0.55) translate(25%, 25%);
+                width: 380px;
+                height: 300px;
+            }
+
+            .card {
+                width: 380px;
+                height: 300px;
+            }
+
+            .card-inner {
+                padding: 25px;
+            }
+
+            .card-number {
+                font-size: 2rem;
+            }
+
+            .card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .card-metrics {
+                gap: 25px;
+                margin-bottom: 20px;
+            }
+
+            .metric-value {
+                font-size: 1.2rem;
+            }
+
+            .metric-label {
+                font-size: 0.8rem;
+            }
+
+            .card p {
+                font-size: 0.85rem;
+                margin-bottom: 15px;
+            }
+
+            .card-price {
+                font-size: 1.1rem;
+            }
+
+            .service-badge {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+
+            .badge-text {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">ZUVOMO PR</div>
+            <a href="#contact" class="nav-cta">Own Your Category</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>PR That Helps You <span>Own Your Category</span> Instead of Just Appearing in It</h1>
+                <p class="hero-subtitle">We Turn Your Project into the Reference Point for Your Entire Niche</p>
+                <p class="hero-description">
+                    You become the project everyone talks about in your category. Narratives crafted by Web3 natives and amplified across the entire ecosystem. Your story reaches every place where your audience listens, learns, and invests.
+                </p>
+                <div class="hero-cta-wrapper">
+                    <a href="#contact" class="cta-button">Own Your Category</a>
+                    <a href="#media-hits" class="cta-button-secondary">Explore Latest Media</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Media Hits Section -->
+    <section class="media-hits" id="media-hits">
+        <div class="container">
+            <h2 class="section-title">LATEST MEDIA HITS WE LANDED FOR OUR CLIENTS</h2>
+            <p class="section-subtitle">Recent placements across top-tier crypto publications</p>
+            <div class="media-grid">
+                <div class="media-card">
+                    <div class="media-image">
+                        <div class="media-placeholder" style="background: linear-gradient(135deg, #02AED6 0%, #2F3A63 100%);"></div>
+                    </div>
+                    <div class="media-content">
+                        <div class="media-publication">
+                            <span class="pub-badge">NewsBTC</span>
+                            <span class="pub-date">Dec 15, 2024</span>
+                        </div>
+                        <h3 class="media-title">Revolutionary DeFi Protocol Launches Cross-Chain Liquidity Solution</h3>
+                        <a href="#" class="media-link">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-image">
+                        <div class="media-placeholder" style="background: linear-gradient(135deg, #F8673C 0%, #02AED6 100%);"></div>
+                    </div>
+                    <div class="media-content">
+                        <div class="media-publication">
+                            <span class="pub-badge">CoinTelegraph</span>
+                            <span class="pub-date">Dec 12, 2024</span>
+                        </div>
+                        <h3 class="media-title">Gaming Platform Achieves 500K Active Users in Record Time</h3>
+                        <a href="#" class="media-link">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-image">
+                        <div class="media-placeholder" style="background: linear-gradient(135deg, #2F3A63 0%, #02AED6 100%);"></div>
+                    </div>
+                    <div class="media-content">
+                        <div class="media-publication">
+                            <span class="pub-badge">BeInCrypto</span>
+                            <span class="pub-date">Dec 10, 2024</span>
+                        </div>
+                        <h3 class="media-title">Layer 2 Solution Reduces Gas Fees by 90% with New Technology</h3>
+                        <a href="#" class="media-link">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-image">
+                        <div class="media-placeholder" style="background: linear-gradient(135deg, #02AED6 0%, #F8673C 100%);"></div>
+                    </div>
+                    <div class="media-content">
+                        <div class="media-publication">
+                            <span class="pub-badge">AMB Crypto</span>
+                            <span class="pub-date">Dec 8, 2024</span>
+                        </div>
+                        <h3 class="media-title">NFT Marketplace Surpasses $100M in Trading Volume Milestone</h3>
+                        <a href="#" class="media-link">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-image">
+                        <div class="media-placeholder" style="background: linear-gradient(135deg, #2F3A63 0%, #F8673C 100%);"></div>
+                    </div>
+                    <div class="media-content">
+                        <div class="media-publication">
+                            <span class="pub-badge">CryptoSlate</span>
+                            <span class="pub-date">Dec 5, 2024</span>
+                        </div>
+                        <h3 class="media-title">Blockchain Infrastructure Secures $50M Series B Funding Round</h3>
+                        <a href="#" class="media-link">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-image">
+                        <div class="media-placeholder" style="background: linear-gradient(135deg, #F8673C 0%, #2F3A63 100%);"></div>
+                    </div>
+                    <div class="media-content">
+                        <div class="media-publication">
+                            <span class="pub-badge">Decrypt</span>
+                            <span class="pub-date">Dec 3, 2024</span>
+                        </div>
+                        <h3 class="media-title">Web3 Startup Partners with Major Exchange for Token Launch</h3>
+                        <a href="#" class="media-link">Read Article →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Your Crypto News Featured -->
+    <section class="publications">
+        <div class="container">
+            <h2 class="section-title">Get Your Crypto News on These Top Sites</h2>
+            <p class="section-subtitle">Guaranteed placement on leading cryptocurrency publications</p>
+            <div class="logo-loop-container">
+                <div class="logo-loop-track">
+                    <ul class="logo-loop-list">
+                        <li class="logo-item"><img src="images/coinpedia_logo.png" alt="CoinPedia" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/crypto.news_logo.png" alt="Crypt.News" class="logo-image"></li>
+                        <li class="logo-item logo-special"><img src="images/ambcrpto.png" alt="AMB Crypto" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/beincrypto.jpg" alt="BeInCrypto" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/coinpage.png" alt="CoinGape" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/cryptonews.png" alt="CryptoNews" class="logo-image"></li>
+                        <li class="logo-item logo-special"><img src="images/dailycoin.png" alt="DailyCoin" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/utoday.png" alt="U.Today" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/newsbtc.png" alt="NewsBTC" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/bitcoinist.png" alt="Bitcoinist" class="logo-image"></li>
+                        <li class="logo-item logo-special"><img src="images/cointelegraph.jpg" alt="CoinTelegraph" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/decrypt.jpg" alt="Decrypt" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/theblock.png" alt="The Block" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/cryptoslate.jpg" alt="CryptoSlate" class="logo-image"></li>
+                    </ul>
+                    <ul class="logo-loop-list" aria-hidden="true">
+                        <li class="logo-item"><img src="images/coinpedia_logo.png" alt="CoinPedia" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/crypto.news_logo.png" alt="Crypt.News" class="logo-image"></li>
+                        <li class="logo-item logo-special"><img src="images/ambcrpto.png" alt="AMB Crypto" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/beincrypto.jpg" alt="BeInCrypto" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/coinpage.png" alt="CoinGape" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/cryptonews.png" alt="CryptoNews" class="logo-image"></li>
+                        <li class="logo-item logo-special"><img src="images/dailycoin.png" alt="DailyCoin" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/utoday.png" alt="U.Today" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/newsbtc.png" alt="NewsBTC" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/bitcoinist.png" alt="Bitcoinist" class="logo-image"></li>
+                        <li class="logo-item logo-special"><img src="images/cointelegraph.jpg" alt="CoinTelegraph" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/decrypt.jpg" alt="Decrypt" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/theblock.png" alt="The Block" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/cryptoslate.jpg" alt="CryptoSlate" class="logo-image"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- As Featured In Section -->
+    <section class="featured-in">
+        <div class="container">
+            <div class="trust-badge">
+                <span class="badge">Building Trust Since 2017</span>
+            </div>
+            <h2 class="section-title">As Featured On</h2>
+            <p class="section-subtitle">Zuvomo has been recognized by leading media outlets</p>
+            <div class="logo-loop-container">
+                <div class="logo-loop-track reverse">
+                    <ul class="logo-loop-list">
+                        <li class="logo-item logo-special"><span style="font-family: Georgia, serif; font-size: 1.5rem;">Forbes</span></li>
+                        <li class="logo-item"><span>Financial Express</span></li>
+                        <li class="logo-item"><span style="color: #00d4aa; font-weight: 700;">mint</span></li>
+                        <li class="logo-item"><span style="font-weight: 900;">ET</span></li>
+                        <li class="logo-item"><span>INDIA TODAY</span></li>
+                        <li class="logo-item"><span>Hindustan Times</span></li>
+                        <li class="logo-item logo-special"><span>YourStory</span></li>
+                        <li class="logo-item"><span>Business Today</span></li>
+                        <li class="logo-item"><span>THE HINDU</span></li>
+                        <li class="logo-item"><span>Economic Times</span></li>
+                    </ul>
+                    <ul class="logo-loop-list" aria-hidden="true">
+                        <li class="logo-item logo-special"><span style="font-family: Georgia, serif; font-size: 1.5rem;">Forbes</span></li>
+                        <li class="logo-item"><span>Financial Express</span></li>
+                        <li class="logo-item"><span style="color: #00d4aa; font-weight: 700;">mint</span></li>
+                        <li class="logo-item"><span style="font-weight: 900;">ET</span></li>
+                        <li class="logo-item"><span>INDIA TODAY</span></li>
+                        <li class="logo-item"><span>Hindustan Times</span></li>
+                        <li class="logo-item logo-special"><span>YourStory</span></li>
+                        <li class="logo-item"><span>Business Today</span></li>
+                        <li class="logo-item"><span>THE HINDU</span></li>
+                        <li class="logo-item"><span>Economic Times</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted by Blockchain Leaders Worldwide Section -->
+    <section class="trusted-clients">
+        <div class="container">
+            <h2 class="section-title">Trusted by Blockchain Leaders Worldwide</h2>
+            <p class="section-subtitle">Partnering with innovative projects across the crypto ecosystem</p>
+            <div class="logo-loop-container">
+                <div class="logo-loop-track">
+                    <ul class="logo-loop-list">
+                        <li class="logo-item"><img src="images/MNW.jpg" alt="MNW" class="logo-image"></li>
+                        <li class="logo-item logo-special"><img src="images/dexcheck.jpg" alt="DexCheck" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/fomo.fund.jpg" alt="Fomo Fund" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/landshare.jpg" alt="Landshare" class="logo-image"></li>
+                        <li class="logo-item logo-special"><img src="images/pencils.png" alt="Pencils Protocol" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/rc.jpg" alt="RC" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/valcan_forged.png" alt="Valcan Forged" class="logo-image"></li>
+                    </ul>
+                    <ul class="logo-loop-list" aria-hidden="true">
+                        <li class="logo-item"><img src="images/MNW.jpg" alt="MNW" class="logo-image"></li>
+                        <li class="logo-item logo-special"><img src="images/dexcheck.jpg" alt="DexCheck" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/fomo.fund.jpg" alt="Fomo Fund" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/landshare.jpg" alt="Landshare" class="logo-image"></li>
+                        <li class="logo-item logo-special"><img src="images/pencils.png" alt="Pencils Protocol" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/rc.jpg" alt="RC" class="logo-image"></li>
+                        <li class="logo-item"><img src="images/valcan_forged.png" alt="Valcan Forged" class="logo-image"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Zuvomo -->
+    <section class="why-zuvomo">
+        <div class="container">
+            <h2 class="section-title">WHY ZUVOMO</h2>
+            <p class="section-subtitle">THREE THINGS YOU SHOULD KNOW ABOUT US</p>
+            <div class="why-intro">
+                <p>We're not another PR vendor with a "Web3" label.<br>
+                Zuvomo is a Web3-native growth engine built to dominate categories, shape narratives, and make projects impossible to ignore.</p>
+            </div>
+            <div class="why-cards">
+                <div class="why-card">
+                    <div class="why-number">1</div>
+                    <h3>CATEGORY-OWNERS, NOT PRESS HUNTERS</h3>
+                    <p>We don't chase random mentions. We build category leadership, turning your project into the reference point for your entire niche.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">2</div>
+                    <h3>NARRATIVE + DISTRIBUTION BUILT FOR WEB3</h3>
+                    <p>Stories crafted by Web3 natives, amplified across the entire ecosystem.</p>
+                    <div class="why-detail">
+                        <p>Zuvomo's strength is simple: We deeply understand founders, roadmaps, token design, liquidity, gameplay loops, RWA cycles, TVL trends — because we come from the space.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">3</div>
+                    <h3>OUTCOME-FOCUSED, NOT RETAINER-FOCUSED</h3>
+                    <p>PR that places you at the center of every important conversation.</p>
+                    <div class="why-detail">
+                        <p>You don't pay us for tasks. You pay us for trajectory.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="why-cta">
+                <a href="#contact" class="cta-button">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section with Card Swap -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">How We Make You Impossible to Ignore</h2>
+            <p class="section-subtitle">Strategic PR that places you at the center of every important conversation</p>
+            
+            <div class="services-wrapper">
+                <div class="services-content">
+                    <div class="service-grid">
+                        <div class="service-badge">
+                            <span class="badge-icon">📰</span>
+                            <span class="badge-text">PR Articles on 100+ Top Crypto Websites</span>
+                        </div>
+                        <div class="service-badge">
+                            <span class="badge-icon">🐦</span>
+                            <span class="badge-text">KOL Marketing on X (Twitter)</span>
+                        </div>
+                        <div class="service-badge">
+                            <span class="badge-icon">💹</span>
+                            <span class="badge-text">Binance Square & Exchange Feeds</span>
+                        </div>
+                        <div class="service-badge">
+                            <span class="badge-icon">📺</span>
+                            <span class="badge-text">YouTube Influencer Reviews</span>
+                        </div>
+                        <div class="service-badge">
+                            <span class="badge-icon">🔥</span>
+                            <span class="badge-text">Reddit & Medium Campaigns</span>
+                        </div>
+                        <div class="service-badge">
+                            <span class="badge-icon">💎</span>
+                            <span class="badge-text">In-House KOL Shilling Network</span>
+                        </div>
+                        <div class="service-badge">
+                            <span class="badge-icon">🎯</span>
+                            <span class="badge-text">Banner Ads on 100+ Crypto Outlets</span>
+                        </div>
+                        <div class="service-badge">
+                            <span class="badge-icon">🚀</span>
+                            <span class="badge-text">Viral Social Media Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-swap-section">
+                    <div class="card-swap-container" id="cardSwap">
+                        <div class="card" data-order="0">
+                            <div class="card-inner">
+                                <div class="card-header">
+                                    <span class="card-number">01</span>
+                                    <span class="card-badge">STRATEGIC</span>
+                                </div>
+                                <h3>Category Ownership</h3>
+                                <div class="card-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">Own</span>
+                                        <span class="metric-label">Your Niche</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">Lead</span>
+                                        <span class="metric-label">Conversations</span>
+                                    </div>
+                                </div>
+                                <p>PR that helps you own your category instead of just appearing in it. We turn your project into the reference point for your entire niche. You become the project everyone talks about.</p>
+                                <div class="card-footer">
+                                    <span class="card-price">Strategic Positioning</span>
+                                    <span class="card-arrow">→</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" data-order="1">
+                            <div class="card-inner">
+                                <div class="card-header">
+                                    <span class="card-number">02</span>
+                                    <span class="card-badge">AMPLIFIED</span>
+                                </div>
+                                <h3>Narrative + Distribution</h3>
+                                <div class="card-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">Web3</span>
+                                        <span class="metric-label">Natives</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">Full</span>
+                                        <span class="metric-label">Ecosystem</span>
+                                    </div>
+                                </div>
+                                <p>Narratives crafted by Web3 natives and amplified across the entire ecosystem. Your story reaches every place where your audience listens, learns, and invests. We build the presence that makes you impossible to ignore.</p>
+                                <div class="card-footer">
+                                    <span class="card-price">Ecosystem-Wide Impact</span>
+                                    <span class="card-arrow">→</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" data-order="2">
+                            <div class="card-inner">
+                                <div class="card-header">
+                                    <span class="card-number">03</span>
+                                    <span class="card-badge">OUTCOME FOCUSED</span>
+                                </div>
+                                <h3>Become The Default Voice</h3>
+                                <div class="card-metrics">
+                                    <div class="metric">
+                                        <span class="metric-value">Center</span>
+                                        <span class="metric-label">Stage</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">Every</span>
+                                        <span class="metric-label">Conversation</span>
+                                    </div>
+                                </div>
+                                <p>PR that moves your project forward by placing you at the center of every important conversation. Your narrative becomes the default voice in your category. Results that matter, not just vanity metrics.</p>
+                                <div class="card-footer">
+                                    <span class="card-price">Measurable Outcomes</span>
+                                    <span class="card-arrow">→</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Book a call with the Crypto PR agency behind</h2>
+            <p class="section-subtitle">Binance, Polygon, Polkadot, and more</p>
+            <div class="contact-form-wrapper">
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="fullname">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company <span class="required">*</span></label>
+                        <input type="text" id="company" name="company" placeholder="Enter your company name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telegram">Telegram</label>
+                        <input type="text" id="telegram" name="telegram" placeholder="Enter your Telegram username">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How can we help? <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy">By submitting this form, you agree to our <a href="#" class="privacy-link">Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" class="cta-button form-submit">Book a Call</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How quickly can I see results from PR campaigns?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most clients see their first publications within 7-14 days of campaign launch. Full campaign results typically manifest within 30-45 days, with continued organic coverage often extending beyond the campaign period.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Which publications can you guarantee placement in?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We have established relationships with 100+ crypto and mainstream publications. We guarantee placement in tier-1 crypto media like CoinPedia, AMB Crypto, BeInCrypto, and many others. Specific placements depend on your chosen package.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do you work with projects at all stages?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We work with projects from pre-launch to established protocols. Our strategies are tailored to your specific stage, whether you're building awareness for an upcoming IDO or maintaining momentum for an established platform.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What makes Zuvomo PR different from other agencies?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>With $500M+ raised for 50+ blockchain startups since 2017, we combine deep crypto expertise with proven PR strategies. Our guaranteed placement model, transparent pricing, and dedicated dashboard for tracking results set us apart.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Can you help with crisis management and reputation?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We offer specialized crisis management services to protect and rebuild project reputation. Our team has successfully managed PR crises for multiple high-profile blockchain projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2>Ready to Own Your Category?</h2>
+            <p>Become the project everyone talks about in your niche</p>
+            <a href="https://calendly.com/zuvomo" class="cta-button" target="_blank">Become The Reference Point</a>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+            
+            // Close other FAQ items
+            const allFaqItems = document.querySelectorAll('.faq-item');
+            allFaqItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Logo Loop Enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Clone logo items for seamless loop if needed
+            const logoTracks = document.querySelectorAll('.logo-loop-track');
+            
+            logoTracks.forEach(track => {
+                // Pause animation on hover for better UX
+                const container = track.closest('.logo-loop-container');
+                let isPaused = false;
+                
+                container.addEventListener('mouseenter', () => {
+                    isPaused = true;
+                    track.style.animationPlayState = 'paused';
+                });
+                
+                container.addEventListener('mouseleave', () => {
+                    isPaused = false;
+                    track.style.animationPlayState = 'running';
+                });
+                
+                // Add touch support for mobile
+                container.addEventListener('touchstart', () => {
+                    track.style.animationPlayState = 'paused';
+                });
+                
+                container.addEventListener('touchend', () => {
+                    setTimeout(() => {
+                        track.style.animationPlayState = 'running';
+                    }, 100);
+                });
+            });
+        });
+
+        // Add scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    
+                    // Start logo animations when in view
+                    const logoTracks = entry.target.querySelectorAll('.logo-loop-track');
+                    logoTracks.forEach(track => {
+                        track.style.animationPlayState = 'running';
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Performance optimization for logo loops
+        if ('IntersectionObserver' in window) {
+            const logoContainers = document.querySelectorAll('.logo-loop-container');
+            const logoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const track = entry.target.querySelector('.logo-loop-track');
+                    if (track) {
+                        if (entry.isIntersecting) {
+                            track.style.animationPlayState = 'running';
+                        } else {
+                            track.style.animationPlayState = 'paused';
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '50px'
+            });
+            
+            logoContainers.forEach(container => {
+                logoObserver.observe(container);
+            });
+        }
+
+        // Accessibility: Reduce motion for users who prefer it
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        
+        function handleReducedMotion() {
+            const tracks = document.querySelectorAll('.logo-loop-track');
+            if (prefersReducedMotion.matches) {
+                tracks.forEach(track => {
+                    track.style.animation = 'none';
+                });
+            }
+        }
+        
+        handleReducedMotion();
+        prefersReducedMotion.addEventListener('change', handleReducedMotion);
+
+        // CardSwap Animation - ReactBits Style
+        class CardSwap {
+            constructor(container, config = {}) {
+                this.container = container;
+                this.cards = Array.from(container.querySelectorAll('.card'));
+                this.config = {
+                    cardDistance: config.cardDistance || 60,
+                    verticalDistance: config.verticalDistance || 70,
+                    delay: config.delay || 5000,
+                    pauseOnHover: config.pauseOnHover !== false,
+                    skewAmount: config.skewAmount || 6,
+                    easing: config.easing || 'elastic'
+                };
+                
+                this.order = this.cards.map((_, i) => i);
+                this.isAnimating = false;
+                this.isPaused = false;
+                this.interval = null;
+                
+                this.init();
+            }
+
+            init() {
+                this.setupInitialPositions();
+                this.startAutoSwap();
+                
+                if (this.config.pauseOnHover) {
+                    this.container.addEventListener('mouseenter', () => this.pause());
+                    this.container.addEventListener('mouseleave', () => this.resume());
+                }
+                
+                // Click handler for manual swap
+                this.cards.forEach(card => {
+                    card.addEventListener('click', () => {
+                        if (!this.isAnimating) {
+                            this.swap();
+                        }
+                    });
+                });
+            }
+
+            makeSlot(i) {
+                return {
+                    x: i * this.config.cardDistance,
+                    y: -i * this.config.verticalDistance,
+                    z: -i * this.config.cardDistance * 1.5,
+                    zIndex: this.cards.length - i
+                };
+            }
+
+            placeCard(card, slot) {
+                const transform = `
+                    translate3d(
+                        calc(-50% + ${slot.x}px),
+                        calc(-50% + ${slot.y}px),
+                        ${slot.z}px
+                    )
+                    skewY(${this.config.skewAmount}deg)
+                `;
+                
+                card.style.transform = transform;
+                card.style.zIndex = slot.zIndex;
+            }
+
+            setupInitialPositions() {
+                this.cards.forEach((card, i) => {
+                    const slot = this.makeSlot(i);
+                    card.dataset.order = i;
+                    this.placeCard(card, slot);
+                });
+            }
+
+            elasticOut(t) {
+                const p = 0.6;
+                return Math.pow(2, -10 * t) * Math.sin((t - p / 4) * (2 * Math.PI) / p) + 1;
+            }
+
+            async animateWithElastic(element, property, from, to, duration) {
+                const startTime = performance.now();
+                const animate = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    const easedProgress = this.elasticOut(progress);
+                    const current = from + (to - from) * easedProgress;
+                    
+                    if (property === 'transform') {
+                        element.style[property] = current;
+                    }
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    }
+                };
+                
+                requestAnimationFrame(animate);
+                return new Promise(resolve => setTimeout(resolve, duration));
+            }
+
+            async swap() {
+                if (this.isAnimating || this.order.length < 2) return;
+                this.isAnimating = true;
+
+                const [frontIndex, ...restIndices] = this.order;
+                const frontCard = this.cards[frontIndex];
+
+                // Step 1: Drop the front card with elastic effect
+                frontCard.style.transition = 'transform 2s cubic-bezier(0.68, -0.6, 0.32, 1.6)';
+                frontCard.style.transform = `
+                    translate3d(-50%, calc(-50% + 500px), 0)
+                    skewY(${this.config.skewAmount}deg)
+                `;
+
+                // Step 2: Promote other cards with staggered elastic effect
+                await this.wait(300);
+                
+                restIndices.forEach((idx, i) => {
+                    const card = this.cards[idx];
+                    const slot = this.makeSlot(i);
+                    
+                    card.style.transition = `all 2s cubic-bezier(0.68, -0.6, 0.32, 1.6)`;
+                    card.style.transitionDelay = `${i * 0.15}s`;
+                    card.style.zIndex = slot.zIndex;
+                    
+                    this.placeCard(card, slot);
+                    card.dataset.order = i;
+                });
+
+                // Step 3: Return front card to back with elastic
+                await this.wait(800);
+                
+                const backSlot = this.makeSlot(this.cards.length - 1);
+                frontCard.style.zIndex = backSlot.zIndex;
+                frontCard.style.transition = 'transform 2s cubic-bezier(0.68, -0.6, 0.32, 1.6)';
+                this.placeCard(frontCard, backSlot);
+                frontCard.dataset.order = this.cards.length - 1;
+
+                // Update order array
+                this.order = [...restIndices, frontIndex];
+
+                // Clean up transitions
+                await this.wait(2000);
+                this.cards.forEach(card => {
+                    card.style.transitionDelay = '';
+                });
+
+                this.isAnimating = false;
+            }
+
+            wait(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            startAutoSwap() {
+                this.interval = setInterval(() => {
+                    if (!this.isPaused && !this.isAnimating) {
+                        this.swap();
+                    }
+                }, this.config.delay);
+            }
+
+            pause() {
+                this.isPaused = true;
+            }
+
+            resume() {
+                this.isPaused = false;
+            }
+
+            destroy() {
+                if (this.interval) {
+                    clearInterval(this.interval);
+                }
+            }
+        }
+
+        // Initialize CardSwap when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const cardSwapContainer = document.getElementById('cardSwap');
+            if (cardSwapContainer) {
+                new CardSwap(cardSwapContainer, {
+                    cardDistance: 60,
+                    verticalDistance: 70,
+                    delay: 5000,
+                    pauseOnHover: true,
+                    skewAmount: 6,
+                    easing: 'elastic'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
