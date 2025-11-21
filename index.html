@@ -879,9 +879,12 @@
 
         .why-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: 1fr;
             gap: 30px;
             margin-top: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .why-card {
@@ -892,8 +895,10 @@
             position: relative;
             overflow: hidden;
             display: flex;
+            flex-direction: row;
             gap: 0;
             padding: 0;
+            min-height: 200px;
         }
 
         .why-card:hover {
@@ -903,34 +908,35 @@
         }
 
         .why-card-image {
-            flex: 0 0 45%;
+            flex: 0 0 40%;
             background: linear-gradient(135deg, #02AED6 0%, #2F3A63 100%);
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 200px;
         }
 
         .why-card-content {
             flex: 1;
-            padding: 30px;
+            padding: 40px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
         .why-number {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: var(--cyan);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Ubuntu', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--white);
-            margin-bottom: 15px;
             flex-shrink: 0;
         }
 
@@ -1683,10 +1689,6 @@
         <div class="container">
             <h2 class="section-title">WHY ZUVOMO</h2>
             <p class="section-subtitle">THREE THINGS YOU SHOULD KNOW ABOUT US</p>
-            <div class="why-intro">
-                <p>We're not another PR vendor with a "Web3" label.<br>
-                Zuvomo is a Web3-native growth engine built to dominate categories, shape narratives, and make projects impossible to ignore.</p>
-            </div>
             <div class="why-cards">
                 <div class="why-card">
                     <div class="why-card-image">
@@ -1694,7 +1696,7 @@
                     </div>
                     <div class="why-card-content">
                         <h3>CATEGORY-OWNERS, NOT PRESS HUNTERS</h3>
-                        <p>We build category leadership, turning your project into the reference point for your entire niche.</p>
+                        <p>We build category leadership, turning your project into the reference point for your niche.</p>
                     </div>
                 </div>
                 <div class="why-card">
@@ -1703,7 +1705,7 @@
                     </div>
                     <div class="why-card-content">
                         <h3>NARRATIVE + DISTRIBUTION BUILT FOR WEB3</h3>
-                        <p>Stories crafted by Web3 natives, amplified across the entire ecosystem. We understand founders, roadmaps, token design, and Web3 mechanics.</p>
+                        <p>Stories crafted by Web3 natives, amplified across the ecosystem for maximum impact and reach.</p>
                     </div>
                 </div>
                 <div class="why-card">
@@ -1712,7 +1714,7 @@
                     </div>
                     <div class="why-card-content">
                         <h3>OUTCOME-FOCUSED, NOT RETAINER-FOCUSED</h3>
-                        <p>PR that places you at the center of every important conversation. You don't pay us for tasks, you pay us for trajectory.</p>
+                        <p>PR that places you at the center of every important conversation driving real trajectory.</p>
                     </div>
                 </div>
             </div>
